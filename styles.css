@@ -1,5 +1,10 @@
+body *:not(script) {
+    display: flex;
+    flex-direction: column;
+}
+
 body{
-    background-color: #1f2933;
+    background-color: gray;
     color: #f5f7fa;
     display: flex;
     flex-direction: column;
@@ -9,41 +14,76 @@ body{
     font-size: 120%;
 }
 
-img{
-    height: 180px;
-    width: 380px;
+#menu{
+    flex-direction: row;
+    gap:4rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 0 0 1rem 0;
 }
+
+#menu a {
+    align-items: center;
+    font-size: 120%;
+    border: 1px solid cornflowerblue;
+    padding: 0.5rem;
+    width: 5em;
+    border-radius: .5rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+    background-color: #1f2933;
+    transition: background-color 12s ease;
+    transition: border-color 12s ease;
+}
+
+#menu a:active {
+    background-color: #486581;
+    cursor: wait;
+}
+
+#menu{
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu {
+        flex-direction: column;
+
+    }
+
+}
+
 
 
 .header h1 {
     margin: 0;
-    background-color: #323f48;
+    background-color: darkgray;
+    color: black;
     padding: 1rem 4rem 1rem 4rem;
     align-items: center;
 }
 
 h2 {
-    background-color: #323f48;
+    background-color: darkgray;
+    color: black;
     box-shadow: 0 4px 4px 0 #1f2933;
-    position: sticky;
-    top: 0;
     align-items: stretch;
-    align-self: stretch;
+
 }
 
 .content{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: stretch;
+    align-items: center;
     width: 80%;
 }
 .article{
     display: flex;
     flex-direction: column;
     padding: 1rem 1rem 0 1rem;
-    min-width: 40rem;
-
+    align-items: stretch;
 }
 .text{
     display: flex;
@@ -54,10 +94,25 @@ h2 {
 .bilder{
     display: flex;
     flex-direction: row;
+    padding: 1rem;
+    max-width: 380px;
+    object-fit: cover;
+    overflow: hidden;
 }
+
+
 .section
 {display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 1rem 1rem 1rem;
+
+
+}
+@media only screen and (max-width: 600px) {
+    .section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }
